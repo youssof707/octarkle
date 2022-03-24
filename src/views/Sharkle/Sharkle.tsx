@@ -7,13 +7,17 @@ import useGuesses from "../../context/Guesses";
 import "./Sharkle.css";
 
 export default function Sharkle() {
-	const { hasLost, hasWon } = useGuesses();
-	return (
-		<div className="Sharkle">
-			{hasWon && <WonPopup />}
-			{hasLost && <LostPopup />}
-			<GuessesDisplay />
-			<GuessInput />
-		</div>
-	);
+  const { hasLost, hasWon } = useGuesses();
+  return (
+    <div className="Sharkle">
+      {hasWon && <WonPopup />}
+      {hasLost && <LostPopup />}
+      <div className="guessGrid row">
+        {new Array(8).fill("").map(() => (
+          <GuessesDisplay />
+        ))}
+      </div>
+      <GuessInput />
+    </div>
+  );
 }
