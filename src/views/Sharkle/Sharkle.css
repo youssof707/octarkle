@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 0.5rem;
   height: 100%;
+  position: relative;
 }
 
 .Sharkle .guessGrid {
